@@ -20,9 +20,9 @@ export default gql`
     deleteIngredient(name: String!): Boolean
     deleteMenu(id: ID!): Boolean
     deleteSeasoning(name: String!): Boolean
-    updateIngredient(id: ID)!: Ingredient
+    updateIngredient(id: ID!): Ingredient
     updateMenu(input: UpdateMenu!): Menu
-    updateSeasoning(id: ID)!: Seasoning
+    updateSeasoning(id: ID!): Seasoning
   }
 
   type Ingredient {
@@ -41,6 +41,12 @@ export default gql`
     updatedAt: String!
   }
 
+  type MenuStep {
+    id: ID!
+    order: Int!
+    description: String!
+  }
+
   type Seasoning {
     id: ID!
     name: String!
@@ -53,8 +59,8 @@ export default gql`
   input CreateMenuInput {
     name: String!
     description: String
-    IngredientIds: [ID!]
-    seasoning: [ID!]
+    ingredientIds: [ID!]
+    seasoningIds: [ID!]
   }
 
   input UpdateMenu {
