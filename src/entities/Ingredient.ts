@@ -18,7 +18,7 @@ export default class Ingredient {
 
   @OneToMany(
     () => MenuIngredient,
-    (menuIngredient) => menuIngredient.MenuIngredient
+    (menuIngredient) => menuIngredient.ingredient
   )
   @JoinColumn()
   menuIngredients!: MenuIngredient[];
