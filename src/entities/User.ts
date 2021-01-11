@@ -22,6 +22,9 @@ export default class User {
   @Column({ type: "text" })
   profileImageURL!: string;
 
+  @Column({ type: "text", nullable: true })
+  verified!: boolean;
+
   @CreateDateColumn()
   readonly createdAt!: Date;
 }
