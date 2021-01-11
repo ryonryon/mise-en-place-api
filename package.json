@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node ./build/index.js",
     "dev": "nodemon ./src/index.ts",
-    "build": "tsc --project . --outDir build"
+    "build": "tsc --project . --outDir build",
+    "deploy": "git add . && git commit -m Heroku && git push heroku main"
   },
   "keywords": [],
   "author": "",
