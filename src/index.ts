@@ -16,7 +16,7 @@ fastify.register(apollo.createHandler());
   try {
     await fastify.listen({ port: 3000 });
 
-    console.log(`🚀 Server is ready at http://localhost:3000/graphql`);
+    console.log(`🚀 Server is ready at http://localhost:3000`);
   } catch (err) {
     fastify.log.error(err);
 
