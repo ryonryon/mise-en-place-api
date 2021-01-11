@@ -1,13 +1,13 @@
 import "dotenv/config";
 import Fastify from "fastify";
 import { createConnection } from "typeorm";
-// import admin from "./admin";
+import admin from "./admin";
 import apollo from "./graphql";
 
 import "reflect-metadata";
 
 const fastify = Fastify();
-// fastify.register(admin);
+fastify.register(admin);
 fastify.register(apollo.createHandler());
 
 (async () => {

@@ -11,6 +11,7 @@ export default gql`
     ingredients: [Ingredient]
     seasoning(id: ID!): Seasoning
     seasonings: [Seasoning]
+    viewer: User
   }
 
   type Mutation {
@@ -53,7 +54,10 @@ export default gql`
   }
 
   type User {
+    id: ID!
     name: String!
+    email: String!
+    profileImageURL: String
   }
 
   input CreateMenuInput {
